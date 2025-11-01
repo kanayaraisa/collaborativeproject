@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Impact of Social Media on Mental Health</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'EB Garamond', serif;
+      background-color: #fdf7f3;
+      color: #2e2e2e;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 12px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      color: #401d45;
+      font-size: 1.15rem;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #e5d6c2;
+    }
+
+    header {
+      height: 100vh;
+      background: url('bg1.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-left: 8%;
+      color: #8a7bb5;
+    }
+
+    .home-text {
+      margin-top: 60px;
+    }
+
+    .home-text h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .home-text h2 {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      margin-left: 50px;
+    }
+
+    .thesis-section {
+      background: url('bg-thesis.png') center/cover no-repeat;
+      padding: 120px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .thesis-text {
+      flex: 1;
+      max-width: 600px;
+      color: #2e2e2e;
+    }
+
+    .thesis-text h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .thesis-text p {
+      font-size: 1.15rem;
+      text-align: justify;
+    }
+
+    .thesis-image img {
+      width: 650px;
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
+    .argument-intro {
+      background-color: #f8f3ef;
+      text-align: center;
+      padding: 100px 15%;
+      font-size: 1.2rem;
+      color: #2e2e2e;
+    }
+
+    .argument-main {
+      background: url('bg-positive.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 10%;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .argument-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .argument-text h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .argument-text p {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    .argument-image img {
+      width: 650px;
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
+    .negative-section {
+      background: url('bg-negative.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 10%;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .negative-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .negative-text h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .negative-text p {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    .negative-image img {
+      width: 650px;
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
+    .conclusion {
+      background-color: #fffaf7;
+      text-align: center;
+      padding: 100px 15%;
+      font-size: 1.2rem;
+      color: #2e2e2e;
+    }
+
+    .references {
+      background-color: #8a7bb5;
+      color: #fffaf7;
+      text-align: center;
+      padding: 100px 10%;
+    }
+
+    .references h3 {
+      font-size: 1.4rem;
+      margin-bottom: 50px;
+      font-weight: 500;
+    }
+
+    .ref-cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .ref-card {
+      background-color: #fffaf7;
+      color: #2b1d1a;
+      border-radius: 15px;
+      width: 280px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .ref-card img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .ref-card h4 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .ref-card p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .ref-card a button {
+      background-color: #8a7bb5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 20px;
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .ref-card a button:hover {
+      background-color: #6d6099;
+    }
+
+    footer {
+      background-color: #fffaf7;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #5c4c49;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        width: 85%;
+        padding: 10px 20px;
+        gap: 20px;
+      }
+
+      header {
+        justify-content: center;
+        text-align: center;
+        padding: 0 5%;
+      }
+
+      .home-text h1 {
+        font-size: 2.6rem;
+      }
+
+      .home-text h2 {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .thesis-section,
+      .argument-main,
+      .negative-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .thesis-image img,
+      .argument-image img,
+      .negative-image img {
+        width: 90%;
+      }
+
+      .ref-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#thesis">Thesis</a>
+    <a href="#argument">Argument</a>
+    <a href="#conclusion">Conclusion</a>
+    <a href="#references">References</a>
+  </nav>
+
+  <header id="home">
+    <div class="home-text">
+      <h1>The Impact of:<br>Social Media on<br>Mental Health</h1>
+      <h2>Group 4</h2>
+    </div>
+  </header>
+
+  <section id="thesis" class="thesis-section">
+    <div class="thesis-text">
+      <h2>Thesis Statement</h2>
+      <p>Social media has a significant impact on mental health, offering both positive and negative effects. While it helps people connect, share, and express themselves, it can also contribute to stress, comparison, and self-esteem issues.</p>
+    </div>
+    <div class="thesis-image">
+      <img src="thesis.png" alt="Thesis Illustration">
+    </div>
+  </section>
+
+  <section id="argument" class="argument-intro">
+    <p>Social media has changed how people connect and perceive themselves. It provides new ways to communicate, build communities, and find inspiration. However, it can also lead to emotional pressure and unrealistic expectations. Understanding both the positive and negative effects helps us use social media more wisely.</p>
+  </section>
+
+  <section class="argument-main">
+    <div class="argument-text">
+      <h2>Positive Impacts:</h2>
+      <p><b>Connection and support:</b> Social media allows people to stay in touch with friends and family, no matter the distance.</p>
+      <p><b>Education and awareness:</b> It helps spread awareness about mental health and encourages young people to seek help.</p>
+      <p><b>Creativity and motivation:</b> Platforms like TikTok and Instagram allow users to share their talents, ideas, and stories.</p>
+    </div>
+    <div class="argument-image">
+      <img src="positive.png" alt="Positive Illustration">
+    </div>
+  </section>
+
+  <section class="negative-section">
+    <div class="negative-image">
+      <img src="negative.png" alt="Negative Illustration">
+    </div>
+    <div class="negative-text">
+      <h2>Negative Impacts:</h2>
+      <p><b>Anxiety and depression:</b> Excessive social media use is linked to higher levels of anxiety, stress, and depression.</p>
+      <p><b>Cyberbullying:</b> Online harassment causes emotional distress and fear among users.</p>
+      <p><b>Addiction and poor focus:</b> Social media addiction reduces focus, affects sleep, and increases fatigue.</p>
+    </div>
+  </section>
+
+  <section id="conclusion" class="conclusion">
+    <p>In conclusion, social media plays a double role in mental health — it can empower and connect people, but it can also create stress and emotional problems. The key is moderation: balancing online activities with real-life interactions helps maintain a healthy mind.</p>
+  </section>
+
+  <section id="references" class="references">
+    <h3>If you guys wanna know the articles we mention, y’all can visit these:</h3>
+    <div class="ref-cards">
+      <div class="ref-card">
+        <img src="upg.png" alt="Logo 1">
+        <h4>Universitas Pendidikan Ganesha</h4>
+        <p>Universitas negeri di Bali yang fokus pada pengembangan pendidikan dan karakter.</p>
+        <a href="https://undiksha.ac.id" target="_blank"><button>Visit Site</button></a>
+      </div>
+
+      <div class="ref-card">
+        <img src="rs.png" alt="Logo 2">
+        <h4>McLean Hospital</h4>
+        <p>Pusat kesehatan mental internasional unggul dalam terapi dan penelitian.</p>
+        <a href="https://www.mcleanhospital.org" target="_blank"><button>Visit Site</button></a>
+      </div>
+
+      <div class="ref-card">
+        <img src="unair.png" alt="Logo 3">
+        <h4>Universitas Airlangga</h4>
+        <p>Universitas terkemuka di Indonesia dengan reputasi global di bidang kedokteran.</p>
+        <a href="https://unair.ac.id" target="_blank"><button>Visit Site</button></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 The Impact Of Social Media On Mental Health
+  </footer>
+
+</body>
+</html>
